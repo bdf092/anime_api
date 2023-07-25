@@ -7,21 +7,21 @@
 
 //Form Elements
 const username = document.getElementById('username');
-const anime = document.getElementById('title');
+const title = document.getElementById('title');
 const genre = document.getElementById('genre');
 const year = document.getElementById('year');
 const review = document.getElementById('review');
+
+const cardContainer = document.getElementById('animeCards');
 
 //Buttons
 const submit = document.getElementById('submit');
 const viewBtn = document.getElementById('view');
 
+//Server Variables
+const url = '';
 
 
-submit.addEventListener('click', (event) => {
-    event.preventDefault();
-    console.log(username.value, anime.value, genre.value, year.value, review.value);
-})
 
 
 
@@ -47,7 +47,61 @@ const createAnime = (anime) => {
 }
 
 
-
 const viewAnime = () => {
-    return;
+
+        fetch(url)
+        .then(resp => resp.json())
+        .then(data => data.array.forEach(anime => {
+        let card = document.createElement('div');
+        card.className = 'card shadow cursor-pointer';
+
+        let cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+
+        let user = document.createElement('h5');
+        title.innerText = anime.name;
+        title.className = 'card-title';
+
+        let title = document.createElement('h5');
+        title.innerText = anime.title;
+        title.className = 'card-title';
+
+        let genre = document.createElement('h5');
+        title.innerText = anime.genre;
+        title.className = 'card-title';
+
+        let year = document.createElement('h5');
+        title.innerText = anime.year;
+        title.className = 'card-title';
+
+        let review = document.createElement('h5');
+        title.innerText = anime.review;
+        title.className = 'card-title';
+
+        cardBody.appendChild(user);
+        cardBody.appendChild(title);
+        cardBody.appendChild(genre);
+        cardBody.appendChild(year);
+        cardBody.appendChild(review);
+        card.appendChild(cardBody);
+        cardContainer.appendChild(card);
+        })
+        .catch(err => console.log(err)))
+        
 }
+
+submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log(username.value, title.value, genre.value, year.value, review.value);
+    const anime = {
+        name: username.value,
+        title: title.value,
+        genre: genre.value,
+        year: year.value,
+        review: review.value
+    }
+    createAnime(anime);
+})
+
+
+viewBtn.addEventListener('click', viewAnime);
