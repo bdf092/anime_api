@@ -1,0 +1,28 @@
+
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.buttonSection {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+
+#animeCards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
