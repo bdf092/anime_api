@@ -13,6 +13,12 @@ h2 {
     margin-bottom: 3%;
 }
 
+.buttonSection {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+}
 
 
 #animeCards {
