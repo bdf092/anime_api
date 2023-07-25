@@ -1,8 +1,20 @@
 [ {
-    "name": "Naruto"
+    "name": "Charlie",
+    "title": "Naruto",
+    "genre": "Action",
+    "year": "1999",
+    "review": "Full of action and great characters!"
 }, {
-    "name": "One Piece"
+    "name": "Barbara",
+    "title": "One Piece",
+    "genre": "Action",
+    "year": "1997",
+    "review": "Pirates, action, characters."
 }, {
-    "name": "Full Metal Alquemist"
+    "name": "Charlie",
+    "title": "Full Metal Alchemist",
+    "genre": "Fantasy",
+    "year": "2001",
+    "review": "A tragic story of two brothers."
 }
 ]

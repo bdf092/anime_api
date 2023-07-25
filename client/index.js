@@ -19,7 +19,7 @@ const submit = document.getElementById('submit');
 const viewBtn = document.getElementById('view');
 
 //Server Variables
-const url = '';
+const url = 'http://localhost:3000/anime';
 
 
 
@@ -51,7 +51,8 @@ const viewAnime = () => {
 
         fetch(url)
         .then(resp => resp.json())
-        .then(data => data.array.forEach(anime => {
+        .then(data => data.forEach(anime => {
+        console.log(anime);
         let card = document.createElement('div');
         card.className = 'card shadow cursor-pointer';
 
@@ -59,24 +60,24 @@ const viewAnime = () => {
         cardBody.className = 'card-body';
 
         let user = document.createElement('h5');
-        title.innerText = anime.name;
-        title.className = 'card-title';
+        user.innerText = 'User: ' + anime.name;
+        user.className = 'card-title';
 
         let title = document.createElement('h5');
         title.innerText = anime.title;
         title.className = 'card-title';
 
         let genre = document.createElement('h5');
-        title.innerText = anime.genre;
-        title.className = 'card-title';
+        genre.innerText = anime.genre;
+        genre.className = 'card-title';
 
         let year = document.createElement('h5');
-        title.innerText = anime.year;
-        title.className = 'card-title';
+        year.innerText = anime.year;
+        year.className = 'card-title';
 
         let review = document.createElement('h5');
-        title.innerText = anime.review;
-        title.className = 'card-title';
+        review.innerText = anime.review;
+        review.className = 'card-title';
 
         cardBody.appendChild(user);
         cardBody.appendChild(title);
